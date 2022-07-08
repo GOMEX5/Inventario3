@@ -1,0 +1,32 @@
+<%- include('../partials/_head') %>
+    <%- include('../partials/_nav') %>
+
+        <div class="container cont1 animate__animated animate__flipInY">
+            <div class="card card1">
+                <div class="card-head bg-dark">
+                    <h2>Agregar Pc</h2>
+                </div>
+                <div class="card-body">
+                    <form action="/addPc" method="POST">
+                        <div class="form-group mb-4">
+                            <input type="text" name="modelo" placeholder="Modelo" class="form-control" required>
+                        </div>
+                        <div class="form-group mb-4">
+                            <select class="form-select" name="ubicacion" aria-label="Ubicacion">
+                                <option value="1">Lab 1</option>
+                                <option value="2">Lab 2</option>
+                                <option value="3">Lab 3</option>
+                                <option value="4">Lab 4</option>
+                                <option value="5">Lab 5</option>
+                              </select>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-dark">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <%- include('../partials/_footer') %>

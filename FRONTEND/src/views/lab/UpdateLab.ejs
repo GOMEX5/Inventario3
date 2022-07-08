@@ -1,0 +1,31 @@
+<%- include('../partials/_head') %>
+    <%- include('../partials/_nav') %>
+
+        <div class="container cont1 animate__animated animate__flipInY">
+            <div class="card card1">
+                <div class="card-head bg-dark">
+                    <h2>Editar Laboratorio</h2>
+                </div>
+                <div class="card-body">
+                    <form action="/updateLab/<%= data.lab_id %>" method="POST">
+                        <div class="form-group mb-4">
+                            <input type="text" name="numeroPc" placeholder="Numero de Pc" class="form-control" value="<%= data.num_pc %>" required>
+                        </div>
+                        <div class="form-group mb-4">
+                            <select class="form-select" name="estado" aria-label="Estado">
+                                    <option selected><%= data.Estado %></option>
+                                    <option value="En Uso">En uso</option>
+                                    <option value="Usuario">No en Uso</option>
+                                    <option value="En Mantenimiento">En Mantenimiento</option>                              
+                                  </select>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-dark">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <%- include('../partials/_footer') %>

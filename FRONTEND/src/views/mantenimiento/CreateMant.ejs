@@ -1,0 +1,29 @@
+<%- include('../partials/_head') %>
+    <%- include('../partials/_nav') %>
+
+        <div class="container cont1 animate__animated animate__flipInY">
+            <div class="card card1">
+                <div class="card-head bg-dark">
+                    <h2>Datos de Mantenimiento</h2>
+                </div>
+                <div class="card-body">
+                    <form action="/addMant" method="POST">
+                        <div class="form-group mb-4">
+                            <input type="text" name="user" placeholder="Usuario" class="form-control" required>
+                        </div>
+                        <div class="form-group mb-4">
+                            <input type="text" name="lab" placeholder="Laboratorio" class="form-control" required>
+                        </div>
+                        <div class="form-group mb-4">
+                            <textarea name="info" cols="80" class="form-control" placeholder="Info" required></textarea>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-dark">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <%- include('../partials/_footer') %>

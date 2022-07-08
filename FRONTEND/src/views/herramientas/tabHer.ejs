@@ -1,0 +1,60 @@
+<%- include('../partials/_head') %>
+    <% if(login) {%>
+        <%- include('../partials/_nav') %>
+            <div class="container-fluid btn_insert_div">
+                <div class="acciones">
+                    <a href="/createHer" class="btn_insert">+</a>
+                </div>
+            </div>
+            <div class="container table-responsive tbm animate__animated animate__bounce">
+                <table class="table table-light table-bordered table-hover">
+                    <thead>
+                        <tr class="table-dark">
+                            <th>N#</th>
+                            <th>Nombre</th>
+                            <th>Tipo</th>
+                            <th>Estado</th>
+                            <th>Cantidad</th>
+                            <th>Usuario</th>
+                            <th>Operaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0; i < data.length; i++){ %>
+                            <tr>
+                                <td>
+                                    <%= i+1 %>
+                                </td>
+                                <td>
+                                    <%= data[i].nombre %>
+                                </td>
+                                <td>
+                                    <%= data[i].tipo %>
+                                </td>
+                                <td>
+                                    <%= data[i].estado %>
+                                </td>
+                                <td>
+                                    <%= data[i].cantidad %>
+                                </td>
+                                <td>
+                                    <%= data[i].Usuarios %>
+                                </td>
+                                <td>
+                                    <a href="/deleteHer/<%=data[i].herramienta_id%>" class="btn btn-danger">Delete</a>
+                                    <a href="/editHer/<%=data[i].herramienta_id%>" class="btn btn-info">Edit</a>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+            <% } else{ %>
+                <div class="div1">
+                    <center>
+                        <h1 class="text-white"><strong><%= name %> </strong></h1>
+                        <a href="/login" class="btn btn-dark text-white">Ir al Login</a>
+                    </center>
+                </div>
+                <% } %>
+                    <%- include('../partials/_footer') %>

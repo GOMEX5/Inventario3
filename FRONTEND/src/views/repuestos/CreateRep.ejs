@@ -1,0 +1,38 @@
+<%- include('../partials/_head') %>
+    <%- include('../partials/_nav') %>
+
+        <div class="container cont1 animate__animated animate__flipInY">
+            <div class="card card1">
+                <div class="card-head bg-dark">
+                    <h2>Agregar Repuesto</h2>
+                </div>
+                <div class="card-body">
+                    <form action="/addRep" method="POST">
+                        <div class="form-group mb-4">
+                            <input type="text" name="nombre" placeholder="Nombre" class="form-control" required>
+                        </div>
+                        <div class="form-group mb-4">
+                            <input type="text" name="serie" placeholder="Serie" class="form-control" required>
+                        </div>
+                        <div class="form-group mb-4">
+                            <select class="form-select" name="estado" aria-label="Estado">
+                                <option value="Nuevo">Nuevo</option>
+                                <option value="Usado">Usado</option>
+                              </select>
+                        </div>
+                        <div class="form-group mb-4">
+                            <input type="phone" name="cantidad" placeholder="Cantidad" class="form-control" required>
+                        </div>
+                        <div class="form-group mb-4">
+                            <input type="text" name="info" placeholder="Info" class="form-control" required>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-dark">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <%- include('../partials/_footer') %>

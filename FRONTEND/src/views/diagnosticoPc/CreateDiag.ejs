@@ -1,0 +1,35 @@
+<%- include('../partials/_head') %>
+    <%- include('../partials/_nav') %>
+
+        <div class="container cont1 animate__animated animate__flipInY">
+            <div class="card card1">
+                <div class="card-head bg-dark">
+                    <h2>Agregar Diagnostico</h2>
+                </div>
+                <div class="card-body">
+                    <form action="/addDiag" method="POST">
+                        <div class="form-group mb-4">
+                            <input type="text" name="Pc" placeholder="Pc" class="form-control" required>
+                        </div>
+                        <div class="form-group mb-4">
+                            <textarea name="detalle" cols="80" class="form-control" placeholder="Detalle" required></textarea>
+                        </div>
+                        <div class="form-group mb-4">
+                            <select class="form-select" name="estado" aria-label="Estado">
+                                <option value="Bueno">Bueno</option>
+                                <option value="Malo">Malo</option>
+                              </select>
+                        </div>
+                        <div class="form-group mb-4">
+                            <textarea name="soluccion_asignada" cols="80" class="form-control" placeholder="posible Solucion" required></textarea>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-dark">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <%- include('../partials/_footer') %>
